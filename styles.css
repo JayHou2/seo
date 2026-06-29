@@ -120,8 +120,7 @@ img {
 }
 
 .hero h1,
-.section-heading h2,
-.content-plan h2 {
+.section-heading h2 {
   margin: 0;
   letter-spacing: 0;
   line-height: 1.08;
@@ -204,7 +203,6 @@ img {
 
 .calculator-section,
 .band,
-.content-plan,
 .article-shell,
 .simple-page {
   padding: 76px clamp(18px, 4vw, 56px);
@@ -215,13 +213,11 @@ img {
   margin-bottom: 28px;
 }
 
-.section-heading h2,
-.content-plan h2 {
+.section-heading h2 {
   font-size: clamp(30px, 4vw, 48px);
 }
 
 .section-heading p,
-.content-plan p,
 .article-card p,
 .city-card p {
   color: var(--muted);
@@ -399,11 +395,6 @@ input[type="range"] {
   font-weight: 700;
 }
 
-.content-plan {
-  display: grid;
-  gap: 22px;
-}
-
 .newsletter-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
@@ -411,42 +402,6 @@ input[type="range"] {
   align-items: start;
   padding: 76px clamp(18px, 4vw, 56px);
   background: #fff;
-}
-
-.launch-section {
-  padding: 76px clamp(18px, 4vw, 56px);
-  background: var(--paper);
-}
-
-.share-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.share-card {
-  display: grid;
-  gap: 8px;
-  align-content: start;
-  min-height: 180px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
-  padding: 18px;
-}
-
-.share-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 12px 30px rgba(23, 32, 28, 0.08);
-}
-
-.share-card h3,
-.share-card p {
-  margin: 0;
-}
-
-.share-card p {
-  color: var(--muted);
 }
 
 .newsletter-section h2 {
@@ -548,7 +503,6 @@ input[type="range"] {
   .hero,
   .tool-layout,
   .newsletter-section,
-  .share-grid,
   .city-grid,
   .article-grid,
   .plan-columns {
@@ -571,8 +525,7 @@ input[type="range"] {
 
   .calculator-section,
   .band,
-  .content-plan,
-  .article-shell,
+    .article-shell,
   .simple-page {
     padding: 52px 18px;
   }
