@@ -1,0 +1,37 @@
+[
+  {
+    "id": "student-banking",
+    "label": "学生银行卡",
+    "headline": "预留学生银行卡/信用记录推荐位",
+    "description": "适合放银行开户注册、无月费账户或信用卡入门联盟链接。",
+    "url": "#"
+  },
+  {
+    "id": "student-phone",
+    "label": "电话卡",
+    "headline": "预留电话卡推荐位",
+    "description": "适合放 eSIM、当地电话卡、国际流量包和开学季折扣。",
+    "url": "#"
+  },
+  {
+    "id": "health-insurance",
+    "label": "医保/保险",
+    "headline": "预留医保和租客保险推荐位",
+    "description": "适合放 OSHC、租客保险、旅行保险或学校保险替代方案。",
+    "url": "#"
+  },
+  {
+    "id": "cheap-flights",
+    "label": "学生机票",
+    "headline": "预留机票比价推荐位",
+    "description": "适合放学生票、行李额度、比价平台和转机风险说明。",
+    "url": "#"
+  },
+  {
+    "id": "renters-insurance",
+    "label": "租房服务",
+    "headline": "预留租房和租客保险推荐位",
+    "description": "适合放租房平台、押金保险、家具租赁和搬家服务。",
+    "url": "#"
+  }
+]

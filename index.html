@@ -4,9 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>留学生生活成本计算器 | StudyCost</title>
-  <meta name="description" content="用 StudyCost 估算美国、英国、加拿大、澳洲热门城市的留学生月度生活费，并阅读租房、医保、交通和银行卡指南。">
-  <link rel="canonical" href="https://example.com/">
+  <meta name="description" content="用 StudyCost 估算纽约、波士顿、伦敦、多伦多、墨尔本等热门留学城市的月度生活费，并阅读租房、医保、交通和银行卡指南。">
+  <link rel="canonical" href="https://jayhou2.github.io/seo/">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    window.STUDYCOST_CONFIG = {
+      analyticsProvider: "replace-with-ga4-or-plausible",
+      newsletterProvider: "replace-with-beehiiv-convertkit-mailchimp",
+      siteUrl: "https://jayhou2.github.io/seo/"
+    };
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -14,20 +21,18 @@
     "name": "StudyCost 留学生生活成本计算器",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "All",
-    "description": "估算热门留学城市的月度租房、饮食、交通、医保、电话卡和杂费预算。"
+    "description": "估算热门留学城市的租房、饮食、交通、医保、电话卡和杂费预算。"
   }
   </script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="StudyCost 首页">
-      <span class="brand-mark">S</span>
-      <span>StudyCost</span>
-    </a>
+    <a class="brand" href="index.html" aria-label="StudyCost 首页"><span class="brand-mark">S</span><span>StudyCost</span></a>
     <nav class="nav" aria-label="主导航">
       <a href="#calculator">计算器</a>
       <a href="#cities">城市指南</a>
       <a href="articles/index.html">文章</a>
+      <a href="resources.html">数据来源</a>
       <a href="about.html">关于</a>
     </nav>
   </header>
@@ -52,45 +57,16 @@
       <div class="section-heading">
         <p class="eyebrow">MVP 核心工具</p>
         <h2>留学生生活成本计算器</h2>
-        <p>默认数据用于早期估算，后续可以按学校、邮编、房型和实时汇率继续细化。</p>
+        <p>预算数据已拆到 <code>data/cities.json</code>，后续可以迁移到 CMS、Google Sheets 或 Airtable。</p>
       </div>
 
       <div class="tool-layout">
         <form class="calculator" id="costForm">
-          <label>
-            城市
-            <select id="citySelect" name="city"></select>
-          </label>
-
-          <label>
-            租房方式
-            <select id="housingType" name="housing">
-              <option value="shared">合租卧室</option>
-              <option value="studio">Studio / 单间</option>
-              <option value="campus">校内宿舍</option>
-            </select>
-          </label>
-
-          <label>
-            生活方式
-            <select id="lifestyle" name="lifestyle">
-              <option value="lean">节省型</option>
-              <option value="balanced" selected>均衡型</option>
-              <option value="comfortable">舒适型</option>
-            </select>
-          </label>
-
-          <label>
-            每月学杂费摊销
-            <input id="tuition" name="tuition" type="number" min="0" step="50" value="0">
-          </label>
-
-          <label>
-            应急储备比例
-            <input id="buffer" name="buffer" type="range" min="0" max="25" step="1" value="10">
-            <span class="range-value"><strong id="bufferValue">10</strong>%</span>
-          </label>
-
+          <label>城市<select id="citySelect" name="city"></select></label>
+          <label>租房方式<select id="housingType" name="housing"><option value="shared">合租卧室</option><option value="studio">Studio / 单间</option><option value="campus">校内宿舍</option></select></label>
+          <label>生活方式<select id="lifestyle" name="lifestyle"><option value="lean">节省型</option><option value="balanced" selected>均衡型</option><option value="comfortable">舒适型</option></select></label>
+          <label>每月学杂费摊销<input id="tuition" name="tuition" type="number" min="0" step="50" value="0"></label>
+          <label>应急储备比例<input id="buffer" name="buffer" type="range" min="0" max="25" step="1" value="10"><span class="range-value"><strong id="bufferValue">10</strong>%</span></label>
           <button class="button primary full" type="submit">重新计算</button>
         </form>
 
@@ -102,6 +78,8 @@
           </div>
           <dl class="breakdown" id="breakdown"></dl>
           <div class="note-box" id="cityNote"></div>
+          <p class="source-line">数据参考：<a id="sourceLink" href="#" target="_blank" rel="noopener">加载中</a></p>
+          <div class="partner-box" id="partnerBox"></div>
         </aside>
       </div>
     </section>
@@ -121,31 +99,31 @@
         <h2>第一月发布 30-50 篇，先围绕明确问题抢长尾词。</h2>
       </div>
       <div class="plan-columns">
-        <article>
-          <h3>成本类</h3>
-          <p>城市生活费、租房预算、伙食费、医保和交通支出。</p>
-        </article>
-        <article>
-          <h3>决策类</h3>
-          <p>不同城市对比、校内宿舍 vs 校外租房、是否需要买车。</p>
-        </article>
-        <article>
-          <h3>变现类</h3>
-          <p>电话卡、银行卡、保险、机票、租房平台和语言课程推荐。</p>
-        </article>
+        <article><h3>成本类</h3><p>城市生活费、租房预算、伙食费、医保和交通支出。</p></article>
+        <article><h3>决策类</h3><p>不同城市对比、校内宿舍 vs 校外租房、是否需要买车。</p></article>
+        <article><h3>变现类</h3><p>电话卡、银行卡、保险、机票、租房平台和语言课程推荐。</p></article>
       </div>
       <a class="button secondary" href="articles/index.html">打开文章库</a>
+    </section>
+
+    <section class="newsletter-section">
+      <div>
+        <p class="eyebrow">订阅入口</p>
+        <h2>把“每周城市预算更新”做成早期留资钩子。</h2>
+        <p>上线后这里可以接 Beehiiv、ConvertKit、Mailchimp、Buttondown 或自建 API。现在先保留无后端表单，方便验证转化文案。</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <label>邮箱<input type="email" name="email" placeholder="you@example.com" required></label>
+        <button class="button primary" type="submit">订阅更新</button>
+        <p id="newsletterStatus" class="form-status" role="status"></p>
+      </form>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>StudyCost 是一个留学生生活成本估算工具。数据仅供规划参考，请以学校、房东和服务商最新报价为准。</p>
-    <nav aria-label="页脚导航">
-      <a href="privacy.html">隐私政策</a>
-      <a href="contact.html">联系</a>
-    </nav>
+    <nav aria-label="页脚导航"><a href="privacy.html">隐私政策</a><a href="contact.html">联系</a></nav>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>

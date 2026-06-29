@@ -1,0 +1,74 @@
+[
+  {
+    "id": "new-york",
+    "name": "New York",
+    "country": "美国",
+    "currency": "USD",
+    "rent": { "shared": 1550, "studio": 2850, "campus": 1900 },
+    "base": { "groceries": 520, "dining": 260, "transit": 132, "health": 180, "phone": 45, "supplies": 120 },
+    "sourceLabel": "NYU cost of attendance and NYC student rent benchmarks",
+    "sourceUrl": "https://www.nyu.edu/admissions/financial-aid-and-scholarships/managing-your-aid/cost-of-attendance.html",
+    "affiliateCategory": "renters-insurance",
+    "note": "纽约搜索量高、广告价值高，但竞争也强。适合优先写租房区域、地铁通勤和校外合租内容。"
+  },
+  {
+    "id": "boston",
+    "name": "Boston",
+    "country": "美国",
+    "currency": "USD",
+    "rent": { "shared": 1300, "studio": 2400, "campus": 1750 },
+    "base": { "groceries": 480, "dining": 230, "transit": 90, "health": 170, "phone": 45, "supplies": 115 },
+    "sourceLabel": "Boston University cost of attendance and local student housing ranges",
+    "sourceUrl": "https://www.bu.edu/finaid/aid-basics/cost-of-attendance/",
+    "affiliateCategory": "student-banking",
+    "note": "波士顿学校密集，适合做学校周边预算、冬季生活成本和学生医保指南。"
+  },
+  {
+    "id": "los-angeles",
+    "name": "Los Angeles",
+    "country": "美国",
+    "currency": "USD",
+    "rent": { "shared": 1250, "studio": 2200, "campus": 1600 },
+    "base": { "groceries": 470, "dining": 250, "transit": 80, "health": 170, "phone": 45, "supplies": 130 },
+    "sourceLabel": "UCLA cost of attendance and Los Angeles commuter assumptions",
+    "sourceUrl": "https://admission.ucla.edu/tuition-aid/tuition-fees",
+    "affiliateCategory": "cheap-flights",
+    "note": "洛杉矶要强调通勤半径和是否买车，租房区域指南有很强 SEO 空间。"
+  },
+  {
+    "id": "london",
+    "name": "London",
+    "country": "英国",
+    "currency": "GBP",
+    "rent": { "shared": 950, "studio": 1700, "campus": 1200 },
+    "base": { "groceries": 320, "dining": 190, "transit": 165, "health": 80, "phone": 20, "supplies": 95 },
+    "sourceLabel": "UCL and Imperial student cost guidance",
+    "sourceUrl": "https://www.ucl.ac.uk/students/fees-and-funding/living-costs",
+    "affiliateCategory": "student-phone",
+    "note": "伦敦适合做 Zone 通勤、学生 Oyster、NHS 和校内宿舍对比内容。"
+  },
+  {
+    "id": "toronto",
+    "name": "Toronto",
+    "country": "加拿大",
+    "currency": "CAD",
+    "rent": { "shared": 1150, "studio": 2050, "campus": 1450 },
+    "base": { "groceries": 420, "dining": 220, "transit": 156, "health": 90, "phone": 55, "supplies": 115 },
+    "sourceLabel": "University of Toronto planning budgets and local rental ranges",
+    "sourceUrl": "https://future.utoronto.ca/finances/fees/",
+    "affiliateCategory": "student-banking",
+    "note": "多伦多可以围绕租房、电话卡、银行卡、冬季装备和兼职成本做内容簇。"
+  },
+  {
+    "id": "melbourne",
+    "name": "Melbourne",
+    "country": "澳洲",
+    "currency": "AUD",
+    "rent": { "shared": 1050, "studio": 1900, "campus": 1450 },
+    "base": { "groceries": 420, "dining": 210, "transit": 170, "health": 70, "phone": 35, "supplies": 110 },
+    "sourceLabel": "University of Melbourne and Study Australia cost guidance",
+    "sourceUrl": "https://students.unimelb.edu.au/student-support/international-student-support/living-in-melbourne/cost-of-living",
+    "affiliateCategory": "health-insurance",
+    "note": "墨尔本留学生需求稳定，OSHC、Myki、合租和打工税号都是可持续选题。"
+  }
+]
