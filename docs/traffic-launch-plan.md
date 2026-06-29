@@ -30,6 +30,21 @@ https://jayhou2.github.io/seo/articles/new-york-student-cost-2026.html?utm_sourc
 
 First month budget article
 https://jayhou2.github.io/seo/articles/first-month-abroad-budget.html?utm_source=manual&utm_medium=social&utm_campaign=launch_week
+
+NYU cost article
+https://jayhou2.github.io/seo/articles/nyu-cost-of-living-2026.html?utm_source=manual&utm_medium=social&utm_campaign=launch_week
+
+Boston vs New York comparison
+https://jayhou2.github.io/seo/articles/boston-vs-new-york-student-cost.html?utm_source=manual&utm_medium=social&utm_campaign=launch_week
+
+London rent zones
+https://jayhou2.github.io/seo/articles/london-student-rent-zones.html?utm_source=manual&utm_medium=social&utm_campaign=launch_week
+
+International student budget template
+https://jayhou2.github.io/seo/articles/international-student-budget-template.html?utm_source=manual&utm_medium=social&utm_campaign=launch_week
+
+US renters insurance
+https://jayhou2.github.io/seo/articles/us-student-renters-insurance.html?utm_source=manual&utm_medium=social&utm_campaign=launch_week
 ```
 
 ## English post copy
@@ -48,6 +63,30 @@ Feedback welcome: which city or school should I add next?
 https://jayhou2.github.io/seo/?utm_source=reddit&utm_medium=social&utm_campaign=launch_week
 ```
 
+### Reddit / NYU or college budget angle
+
+```text
+I made a simple NYU cost-of-living estimate for students trying to separate tuition from monthly cash flow.
+
+It breaks the budget into rent, food, subway, insurance, phone, supplies, and first-month setup costs. I also linked the official NYU cost-of-attendance page so students can compare the calculator against school estimates.
+
+What category do students usually forget when budgeting for NYC?
+
+https://jayhou2.github.io/seo/articles/nyu-cost-of-living-2026.html?utm_source=reddit&utm_medium=social&utm_campaign=nyu_budget
+```
+
+### Reddit / city comparison angle
+
+```text
+I wrote a short Boston vs New York student cost comparison for people choosing between schools in both cities.
+
+The main idea: don't compare only the city name. Compare rent, commute, health insurance, and first-month cash needs.
+
+What would you add from living in either city as a student?
+
+https://jayhou2.github.io/seo/articles/boston-vs-new-york-student-cost.html?utm_source=reddit&utm_medium=social&utm_campaign=city_compare
+```
+
 ### X / LinkedIn
 
 ```text
@@ -58,6 +97,23 @@ It estimates rent, food, transit, insurance, phone plans, supplies, and first-mo
 Starting with NYC, Boston, London, Toronto, and Melbourne.
 
 https://jayhou2.github.io/seo/?utm_source=x&utm_medium=social&utm_campaign=launch_week
+```
+
+### X / LinkedIn article thread
+
+```text
+New on StudyCost:
+
+5 student-budget pages built for long-tail search:
+
+1. NYU cost of living 2026
+2. Boston vs New York student cost
+3. London student rent zones
+4. International student monthly budget template
+5. US student renters insurance
+
+Starting point:
+https://jayhou2.github.io/seo/articles/?utm_source=x&utm_medium=social&utm_campaign=content_batch_1
 ```
 
 ## Chinese post copy
@@ -74,6 +130,37 @@ https://jayhou2.github.io/seo/?utm_source=x&utm_medium=social&utm_campaign=launc
 欢迎告诉我你想加哪个城市/学校，我会继续补数据和指南。
 
 https://jayhou2.github.io/seo/?utm_source=zhihu&utm_medium=social&utm_campaign=launch_week
+```
+
+### 知乎 / 小红书：纽约 + NYU 角度
+
+```text
+我今天补了一篇 NYU/纽约生活费预算。
+
+很多同学看 offer 的时候只盯 tuition，但真正压力来自每月现金流：房租、地铁、吃饭、医保、电话卡、日用品、押金和刚落地第一个月的启动资金。
+
+我把它整理成一篇英文页面，方便之后也能面向美国本地学生：
+
+https://jayhou2.github.io/seo/articles/nyu-cost-of-living-2026.html?utm_source=zhihu&utm_medium=social&utm_campaign=nyu_budget
+
+如果你正在看纽约学校，可以留言学校名，我下一批会按学校/城市继续补。
+```
+
+### 知乎 / 小红书：选校城市对比角度
+
+```text
+选 Boston 还是 New York，不能只看学校排名。
+
+生活成本要拆成：
+- 房租和室友选择
+- 通勤时间
+- 医保/电话卡/银行卡
+- 第一个月押金和临时住宿
+- 每月真实现金流
+
+我整理了一个 Boston vs New York 学生成本对比：
+
+https://jayhou2.github.io/seo/articles/boston-vs-new-york-student-cost.html?utm_source=zhihu&utm_medium=social&utm_campaign=city_compare
 ```
 
 ## Day-by-day sprint
