@@ -340,6 +340,7 @@ function setLanguage(lang) {
   applyStaticTranslations();
   renderCities();
   calculate();
+  window.studyCostTrack?.("language_switch", { language: lang });
 }
 
 async function loadJson(path, fallback) {
@@ -365,6 +366,13 @@ function calculate(event) {
   const reserve = subtotal * (Number(buffer.value) / 100);
   const total = subtotal + reserve;
   const partner = getPartner(city);
+
+  window.studyCostTrack?.("calculator_update", {
+    city: city.id,
+    housing: housingType.value,
+    lifestyle: lifestyle.value,
+    buffer_percent: Number(buffer.value)
+  });
 
   resultCity.textContent = `${city.name}, ${countryName(city.country)} · ${lifestyleChoice.label[currentLang]}`;
   monthlyTotal.textContent = money(total, city.currency);
@@ -423,6 +431,7 @@ function initNewsletter() {
   newsletterForm.addEventListener("submit", (event) => {
     event.preventDefault();
     newsletterStatus.textContent = t("newsletterDone");
+    window.studyCostTrack?.("newsletter_intent", { language: currentLang });
     newsletterForm.reset();
   });
 }
