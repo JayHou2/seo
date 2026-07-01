@@ -96,6 +96,7 @@ const translations = {
     pageTitle: "Student Cost of Living Calculator | StudyCost",
     metaDescription: "Use StudyCost to estimate monthly living costs in popular college cities, including rent, food, transit, insurance, phone plans, and starter expenses.",
     navCalculator: "Calculator",
+    navFirstMonth: "First Month",
     navCities: "City Guides",
     navArticles: "Articles",
     navSources: "Sources",
@@ -132,6 +133,25 @@ const translations = {
     perMonth: "/ month",
     dataReference: "View data reference",
     affiliateLink: "Replace with affiliate link",
+    startupEyebrow: "Move-in Tool",
+    startupTitle: "First Month Abroad Calculator",
+    startupText: "Estimate the cash you may need before your first normal month begins: deposit, temporary housing, bedding, kitchen basics, phone setup, transit, and emergency buffer.",
+    startupCity: "City",
+    startupHousing: "Housing Plan",
+    startupDepositMonths: "Rent deposit / upfront rent",
+    startupTempNights: "Temporary housing nights",
+    startupFlight: "One-way flight or move-in travel",
+    startupRecalculate: "Estimate First Month",
+    copyStartupResult: "Copy Result",
+    startupBeforeMonth: "Before your first normal month",
+    startupDeposit: "Deposit and upfront rent",
+    startupTemporary: "Temporary housing",
+    startupFlightRow: "Flight or move-in travel",
+    startupHomeSetup: "Bedding, kitchen, and home setup",
+    startupPhoneTransit: "Phone, transit, and local setup",
+    startupBuffer: "First-month buffer",
+    startupNote: "Move-in month is not a normal month. Keep this cash separate from tuition and your regular monthly budget.",
+    startupCopied: "First-month estimate copied.",
     citiesEyebrow: "First City Set",
     citiesTitle: "Start with cities people search for every year",
     citiesText: "Cover high-demand college cities first, then expand each city into housing areas, school neighborhoods, banking, transit, and safety guides.",
@@ -150,6 +170,7 @@ const translations = {
     pageTitle: "留学生生活成本计算器 | StudyCost",
     metaDescription: "用 StudyCost 估算纽约、波士顿、伦敦、多伦多、墨尔本等热门留学城市的月度生活费，并阅读租房、医保、交通和银行卡指南。",
     navCalculator: "计算器",
+    navFirstMonth: "第一个月",
     navCities: "城市指南",
     navArticles: "文章",
     navSources: "数据来源",
@@ -186,6 +207,25 @@ const translations = {
     perMonth: "/ 月",
     dataReference: "查看数据参考",
     affiliateLink: "替换为联盟链接",
+    startupEyebrow: "落地启动资金",
+    startupTitle: "出国第一个月启动资金计算器",
+    startupText: "估算第一个正常月份开始前可能需要的现金：押金、临时住宿、床品、锅具、电话卡、交通和应急储备。",
+    startupCity: "城市",
+    startupHousing: "住宿计划",
+    startupDepositMonths: "押金 / 预付房租月数",
+    startupTempNights: "临时住宿晚数",
+    startupFlight: "单程机票或搬家交通",
+    startupRecalculate: "估算启动资金",
+    copyStartupResult: "复制结果",
+    startupBeforeMonth: "第一个正常月份开始前",
+    startupDeposit: "押金和预付房租",
+    startupTemporary: "临时住宿",
+    startupFlightRow: "机票或搬家交通",
+    startupHomeSetup: "床品、锅具和住家用品",
+    startupPhoneTransit: "电话卡、交通和本地开通",
+    startupBuffer: "第一个月应急储备",
+    startupNote: "落地第一个月不是正常月份。建议把这笔启动资金和学费、常规月生活费分开准备。",
+    startupCopied: "第一个月预算结果已复制。",
     citiesEyebrow: "第一批城市",
     citiesTitle: "从搜索需求稳定的城市开始",
     citiesText: "先覆盖热门留学城市，每个城市都可以扩展租房区域、学校周边、银行卡、交通和安全指南。",
@@ -268,6 +308,20 @@ const partnerBox = document.querySelector("#partnerBox");
 const newsletterForm = document.querySelector("#newsletterForm");
 const newsletterStatus = document.querySelector("#newsletterStatus");
 const languageButtons = document.querySelectorAll(".language-button");
+const startupForm = document.querySelector("#startupForm");
+const startupCitySelect = document.querySelector("#startupCitySelect");
+const startupHousingType = document.querySelector("#startupHousingType");
+const depositMonths = document.querySelector("#depositMonths");
+const tempNights = document.querySelector("#tempNights");
+const flightCost = document.querySelector("#flightCost");
+const startupResultCity = document.querySelector("#startupResultCity");
+const startupTotal = document.querySelector("#startupTotal");
+const startupMonthlyContext = document.querySelector("#startupMonthlyContext");
+const startupBreakdown = document.querySelector("#startupBreakdown");
+const startupNote = document.querySelector("#startupNote");
+const copyStartupResult = document.querySelector("#copyStartupResult");
+
+let lastStartupSummary = "";
 
 function money(value, currency) {
   return `${symbols[currency] || ""}${Math.round(value).toLocaleString("en-US")}`;
@@ -275,6 +329,10 @@ function money(value, currency) {
 
 function getSelectedCity() {
   return cities.find((city) => city.id === citySelect.value) || cities[0];
+}
+
+function getStartupCity() {
+  return cities.find((city) => city.id === startupCitySelect?.value) || cities[0];
 }
 
 function getPartner(city) {
@@ -324,6 +382,7 @@ function setLanguage(lang) {
   applyStaticTranslations();
   renderCities();
   calculate();
+  calculateStartup();
   window.studyCostTrack?.("language_switch", { language: lang });
 }
 
@@ -389,6 +448,10 @@ function renderCities() {
     .map((city) => `<option value="${city.id}">${city.name}, ${countryName(city.country)}</option>`)
     .join("");
 
+  if (startupCitySelect) {
+    startupCitySelect.innerHTML = citySelect.innerHTML;
+  }
+
   cityGrid.innerHTML = cities
     .map((city) => {
       const livingBase = Object.values(city.base).reduce((sum, value) => sum + value, 0);
@@ -420,12 +483,77 @@ function initNewsletter() {
   });
 }
 
+function calculateStartup(event) {
+  if (event) event.preventDefault();
+  if (!startupForm) return;
+
+  const city = getStartupCity();
+  const rent = city.rent[startupHousingType.value];
+  const baseLiving = Object.values(city.base).reduce((sum, value) => sum + value, 0);
+  const nightlyTemp = Math.max(70, rent / 22);
+  const deposit = rent * Number(depositMonths.value || 0);
+  const temporary = nightlyTemp * Number(tempNights.value || 0);
+  const travel = Number(flightCost.value || 0);
+  const homeSetup = Math.max(350, baseLiving * 0.55);
+  const phoneTransit = city.base.phone + city.base.transit + 120;
+  const bufferAmount = (deposit + temporary + travel + homeSetup + phoneTransit) * 0.12;
+  const total = deposit + temporary + travel + homeSetup + phoneTransit + bufferAmount;
+
+  const rows = [
+    [t("startupDeposit"), deposit],
+    [t("startupTemporary"), temporary],
+    [t("startupFlightRow"), travel],
+    [t("startupHomeSetup"), homeSetup],
+    [t("startupPhoneTransit"), phoneTransit],
+    [t("startupBuffer"), bufferAmount]
+  ];
+
+  startupResultCity.textContent = `${city.name}, ${countryName(city.country)}`;
+  startupTotal.textContent = money(total, city.currency);
+  startupMonthlyContext.textContent = t("startupBeforeMonth");
+  startupNote.textContent = t("startupNote");
+  startupBreakdown.innerHTML = rows
+    .map(([label, value]) => `<div><dt>${label}</dt><dd>${money(value, city.currency)}</dd></div>`)
+    .join("");
+
+  lastStartupSummary = [
+    `StudyCost first-month estimate: ${city.name}`,
+    `${t("startupDeposit")}: ${money(deposit, city.currency)}`,
+    `${t("startupTemporary")}: ${money(temporary, city.currency)}`,
+    `${t("startupFlightRow")}: ${money(travel, city.currency)}`,
+    `${t("startupHomeSetup")}: ${money(homeSetup, city.currency)}`,
+    `${t("startupPhoneTransit")}: ${money(phoneTransit, city.currency)}`,
+    `${t("startupBuffer")}: ${money(bufferAmount, city.currency)}`,
+    `Total: ${money(total, city.currency)}`,
+    "https://jayhou2.github.io/seo/"
+  ].join("\n");
+
+  window.studyCostTrack?.("first_month_calculator_update", {
+    city: city.id,
+    housing: startupHousingType.value,
+    deposit_months: Number(depositMonths.value || 0),
+    temp_nights: Number(tempNights.value || 0)
+  });
+}
+
+async function copyStartupEstimate() {
+  if (!lastStartupSummary) calculateStartup();
+  try {
+    await navigator.clipboard.writeText(lastStartupSummary);
+    startupNote.textContent = t("startupCopied");
+  } catch (error) {
+    startupNote.textContent = lastStartupSummary;
+  }
+  window.studyCostTrack?.("first_month_result_copy", { city: getStartupCity().id });
+}
+
 async function init() {
   cities = await loadJson("data/cities.json", fallbackCities);
   partners = await loadJson("data/partners.json", fallbackPartners);
   applyStaticTranslations();
   renderCities();
   calculate();
+  calculateStartup();
   initNewsletter();
 }
 
@@ -443,4 +571,11 @@ buffer.addEventListener("input", () => {
 });
 
 costForm.addEventListener("submit", calculate);
+if (startupForm) {
+  startupForm.addEventListener("submit", calculateStartup);
+  [startupCitySelect, startupHousingType, depositMonths, tempNights, flightCost].forEach((input) => {
+    input.addEventListener("input", calculateStartup);
+  });
+}
+copyStartupResult?.addEventListener("click", copyStartupEstimate);
 init();

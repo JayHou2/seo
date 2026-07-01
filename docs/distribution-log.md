@@ -10,6 +10,7 @@ Use this file after every manual post so traffic work becomes measurable instead
 | 2026-07-01 | X | Second content batch: UCLA, USC, UC Berkeley, UW, UChicago | https://jayhou2.github.io/seo/articles/?utm_source=x&utm_medium=social&utm_campaign=content_batch_2 | GA4 realtime source, article hub visits |
 | 2026-07-01 | Xiaohongshu | California student cost angle, no direct link unless safe | https://jayhou2.github.io/seo/articles/?utm_source=xiaohongshu&utm_medium=social&utm_campaign=content_batch_2 | Saves, comments, requests for link |
 | 2026-07-01 | Reddit comments | Reply only if someone asks for the checklist/tool | https://jayhou2.github.io/seo/articles/?utm_source=reddit&utm_medium=comment&utm_campaign=content_batch_2 | Referral visits, comment replies |
+| 2026-07-01 | Xiaohongshu / X / Reddit comments | First Month Abroad Calculator | https://jayhou2.github.io/seo/?utm_source=manual&utm_medium=social&utm_campaign=first_month_tool#firstMonth | Tool visits, result copies, comments asking for checklist |
 
 ## What to record
 

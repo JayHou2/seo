@@ -42,6 +42,7 @@
     <a class="brand" href="index.html" aria-label="StudyCost home"><span class="brand-mark">S</span><span>StudyCost</span></a>
     <nav class="nav" aria-label="Main navigation">
       <a href="#calculator" data-i18n="navCalculator">Calculator</a>
+      <a href="#firstMonth" data-i18n="navFirstMonth">First Month</a>
       <a href="#cities" data-i18n="navCities">City Guides</a>
       <a href="articles/index.html" data-i18n="navArticles">Articles</a>
       <a href="resources.html" data-i18n="navSources">Sources</a>
@@ -96,6 +97,36 @@
           <div class="note-box" id="cityNote"></div>
           <p class="source-line"><span data-i18n="sourcePrefix">Source:</span> <a id="sourceLink" href="#" target="_blank" rel="noopener">Loading</a></p>
           <div class="partner-box" id="partnerBox"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="firstMonth" class="calculator-section startup-section">
+      <div class="section-heading">
+        <p class="eyebrow" data-i18n="startupEyebrow">Move-in Tool</p>
+        <h2 data-i18n="startupTitle">First Month Abroad Calculator</h2>
+        <p data-i18n="startupText">Estimate the cash you may need before your first normal month begins: deposit, temporary housing, bedding, kitchen basics, phone setup, transit, and emergency buffer.</p>
+      </div>
+
+      <div class="tool-layout">
+        <form class="calculator" id="startupForm">
+          <label><span data-i18n="startupCity">City</span><select id="startupCitySelect" name="startupCity"></select></label>
+          <label><span data-i18n="startupHousing">Housing Plan</span><select id="startupHousingType" name="startupHousing"><option value="shared" data-i18n="housingShared">Shared room</option><option value="studio" data-i18n="housingStudio">Studio / private apartment</option><option value="campus" data-i18n="housingCampus">On-campus housing</option></select></label>
+          <label><span data-i18n="startupDepositMonths">Rent deposit / upfront rent</span><input id="depositMonths" name="depositMonths" type="number" min="0" max="6" step="0.5" value="2"></label>
+          <label><span data-i18n="startupTempNights">Temporary housing nights</span><input id="tempNights" name="tempNights" type="number" min="0" max="30" step="1" value="5"></label>
+          <label><span data-i18n="startupFlight">One-way flight or move-in travel</span><input id="flightCost" name="flightCost" type="number" min="0" step="25" value="650"></label>
+          <button class="button primary full" type="submit" data-i18n="startupRecalculate">Estimate First Month</button>
+        </form>
+
+        <aside class="result-panel" aria-live="polite">
+          <div class="result-top">
+            <p id="startupResultCity">New York, United States</p>
+            <strong id="startupTotal">$0</strong>
+            <span id="startupMonthlyContext">Before your first normal month</span>
+          </div>
+          <dl class="breakdown" id="startupBreakdown"></dl>
+          <div class="note-box" id="startupNote"></div>
+          <button class="button secondary full" type="button" id="copyStartupResult" data-i18n="copyStartupResult">Copy Result</button>
         </aside>
       </div>
     </section>

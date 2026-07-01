@@ -208,6 +208,10 @@ img {
   padding: 76px clamp(18px, 4vw, 56px);
 }
 
+.startup-section {
+  background: #fff;
+}
+
 .section-heading {
   max-width: 760px;
   margin-bottom: 28px;
