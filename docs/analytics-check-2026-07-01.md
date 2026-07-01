@@ -9,7 +9,7 @@
 
 ## Finding
 
-The live site is currently tagged with:
+The live site was tagged with:
 
 ```text
 G-5YFEJLB99X
@@ -32,6 +32,4 @@ New users: 0
 
 ## Meaning
 
-The zero traffic shown in that GA screen may be from the wrong Analytics property or data stream. Before judging traffic performance, open the GA4 property/data stream whose Measurement ID is `G-5YFEJLB99X`, or decide to switch the website tag to the newer `G-8WW9X6GKH2`.
-
-Do not change the website tag until the intended GA property is confirmed.
+The user confirmed that the intended GA4 web stream is `G-8WW9X6GKH2`, so the website tag should use that Measurement ID going forward.
